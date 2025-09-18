@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="max-w-md mx-auto mt-10 shadow-lg">
+  <form method="POST" class="bg-white p-6 shadow-md rounded" novalidate>
+    {{ form.hidden_tag() }}
+
+    <!-- Email -->
+    <div class="mb-4">
+      {{ form.email.label }} {{ form.email(class="border w-full p-2 rounded-sm
+      focus:outline-emerald-700") }} {% for error in form.email.errors %}
+      <p class="text-red-500 text-sm">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <!-- Password -->
+    <div class="mb-4">
+      {{ form.password.label }} {{ form.password(class="border w-full p-2 rounded-sm
+      focus:outline-emerald-700") }} {% for error in form.password.errors %}
+      <p class="text-red-500 text-sm">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <!-- Remember Me -->
+    <div class="mb-4 flex gap-2">
+      {{ form.remember.label(class="ms-2 text-sm font-medium text-gray-900 ") }} {{
+      form.remember(class="w-4 h-4 text-emerald-700 rounded-sm ") }}
+    </div>
+
+    {{ form.submit(class="bg-blue-500 cursor-pointer text-white px-4 py-2 rounded") }}
+  </form>
+</div>
+{% endblock %}

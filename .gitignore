@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Instance folder
+instance/
+
+# Environment variables
+.env
+
+# Node modules
+node_modules/

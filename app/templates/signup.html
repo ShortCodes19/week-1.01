@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="max-w-md mx-auto mt-10 shadow-lg">
+  <form method="POST" class="bg-white p-6 shadow-md rounded" novalidate>
+    {{ form.hidden_tag() }}
+
+    <!-- Username -->
+    <div class="mb-4">
+      {{ form.username.label }} {{ form.username(class="border w-full p-2 rounded-sm
+      focus:outline-emerald-700") }} {% for error in form.username.errors %}
+      <p class="text-red-500 text-sm">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <!-- Email -->
+    <div class="mb-4">
+      {{ form.email.label }} {{ form.email(class="border w-full p-2 rounded-sm
+      focus:outline-emerald-700") }} {% for error in form.email.errors %}
+      <p class="text-red-500 text-sm">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <!-- Password -->
+    <div class="mb-4">
+      {{ form.password.label }} {{ form.password(class="border w-full p-2 rounded-sm
+      focus:outline-emerald-700") }} {% for error in form.password.errors %}
+      <p class="text-red-500 text-sm">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="mb-4">
+      {{ form.confirm.label }} {{ form.confirm(class="border w-full p-2 rounded-sm
+      focus:outline-emerald-700") }} {% for error in form.confirm.errors %}
+      <p class="text-red-500 text-sm">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    {{ form.submit(class="bg-blue-500 cursor-pointer text-white px-4 py-2 rounded") }}
+  </form>
+</div>
+{% endblock %}
